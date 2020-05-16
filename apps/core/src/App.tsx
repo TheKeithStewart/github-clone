@@ -1,27 +1,48 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import './App.scss';
+
 import { ListRepos } from '@github-clone/repos';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and blah save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Router>
+        <header className="App-header">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/repos">Repos</Link>
+              </li>
+              <li>
+                <Link to="/prs">Pull Requests</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-        <ListRepos />
-      </header>
+        <div>
+          <Switch>
+            <Route path="/repos">
+              <ListRepos />
+            </Route>
+            <Route path="/prs">PRs</Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
+}
+
+function Home() {
+  return <h2>Home</h2>;
 }
 
 export default App;
