@@ -4,7 +4,7 @@
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
     "clean": "npx lerna run clean && npx rimraf node_modules",
-    "test": "npx lerna run test",
+    "test": "jest",
     "build": "npx lerna run build",
     "start": "npx lerna run --scope @git-clone/core start"
   },
@@ -25,10 +25,26 @@
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "react-scripts": "3.4.1",
+    "ts-jest": "^26.0.0",
     "typescript": "~3.7.2"
   },
   "workspaces": [
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "setupFilesAfterEnv": [
+      "./setupTests.ts"
+    ],
+    "collectCoverageFrom": [
+      "packages/*/src/**/*.{js,jsx,ts,tsx}",
+      "apps/*/src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "./__mocks__/styleMock.js"
+    }
+  }
 }
