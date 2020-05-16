@@ -1,9 +1,8 @@
-const { override, babelInclude, addBundleVisualizer } = require('customize-cra')
-const path = require('path')
+const { override, babelInclude, addBundleVisualizer } = require('customize-cra');
+const path = require('path');
+const getYarnWorkspaces = require('get-yarn-workspaces');
 
 module.exports = override(
   process.env.BUNDLE_VISUALIZE && addBundleVisualizer(),
-  babelInclude([
-    path.resolve('src'), // make sure you link your own source
-  ]),
-)
+  babelInclude(getYarnWorkspaces()),
+);
