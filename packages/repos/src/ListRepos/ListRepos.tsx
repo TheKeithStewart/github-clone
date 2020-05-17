@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import List from '@material-ui/core/List';
+
+import './ListRepos.scss';
 
 import { Repo } from '../interfaces';
 import { Repository } from './Repo/Repo';
@@ -21,12 +24,14 @@ export const ListRepos = ({ username }: Props) => {
   }, [username]);
 
   return (
-    <div>
+    <div className="list-repos-container">
       <h3>List Repos</h3>
 
-      {repos.map((repo, index) => (
-        <Repository key={index} {...repo} />
-      ))}
+      <List className="repo-list">
+        {repos.map((repo, index) => (
+          <Repository key={index} {...repo} />
+        ))}
+      </List>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import React from 'react';
+import ListItem from '@material-ui/core/ListItem';
 
 import { Repo } from '../../interfaces';
 
 export const Repository = ({ html_url }: Repo) => {
   return (
-    <div>
+    <ListItem button>
       <span>{html_url}</span>
-    </div>
+    </ListItem>
   );
 };
