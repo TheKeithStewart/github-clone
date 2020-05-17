@@ -28,7 +28,7 @@ function App() {
         <div>
           <Switch>
             <Route path="/repos">
-              <ListRepos />
+              <ListRepos username={'thekeithstewart'} />
             </Route>
             <Route path="/prs">PRs</Route>
             <Route path="/">

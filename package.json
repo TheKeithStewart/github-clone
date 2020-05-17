@@ -9,6 +9,7 @@
     "start": "npx lerna run --scope @git-clone/core start"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"

@@ -16,6 +16,8 @@
 - debugging
 - formatting with Prettier
 - lazy loading
+- snipits for common patterns (e.g. components)
+- data model directories
 
 ## Structure
 
