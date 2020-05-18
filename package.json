@@ -6,7 +6,8 @@
     "clean": "npx lerna run clean && npx rimraf node_modules",
     "test": "jest",
     "build": "npx lerna run build",
-    "start": "npx lerna run --scope @git-clone/core start"
+    "start": "npx lerna run --scope @git-clone/core start",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.14",
@@ -17,6 +18,8 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.18",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -25,12 +28,14 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
+    "fork-ts-checker-webpack-plugin": "^4.1.4",
     "get-yarn-workspaces": "^1.0.2",
     "lerna": "^3.21.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "react-scripts": "3.4.1",
     "ts-jest": "^26.0.0",
+    "ts-loader": "^7.0.4",
     "typescript": "~3.7.2"
   },
   "workspaces": [
