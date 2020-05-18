@@ -6,13 +6,11 @@ import './ListRepos.scss';
 
 import { Repo } from '../interfaces';
 import { Repository } from './Repo/Repo';
+import { useUsernameContext } from '@github-clone/context';
 
-type Props = {
-  username: string;
-};
-
-export const ListRepos = ({ username }: Props) => {
+export const ListRepos = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
+  const username = useUsernameContext();
 
   useEffect(() => {
     if (username) {

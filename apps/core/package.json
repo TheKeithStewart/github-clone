@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@github-clone/repos": "*"
+    "@github-clone/repos": "*",
+    "@github-clone/context": "*"
   },
   "peerDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
