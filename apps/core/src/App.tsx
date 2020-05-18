@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './App.scss';
 
-import { ListRepos } from '@github-clone/repos';
+import { ReposPage } from '@github-clone/repos';
 import { UsernameContext } from '@github-clone/context';
 import { UsernameForm } from './UsernameForm/UsernameForm';
 
@@ -37,7 +37,7 @@ function App() {
 
             <Switch>
               <Route path="/repos">
-                <ListRepos />
+                <ReposPage />
               </Route>
               <Route path="/prs">PRs</Route>
               <Route path="/">
