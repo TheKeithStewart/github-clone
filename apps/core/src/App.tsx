@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './App.scss';
 
-import { ReposPage } from '@github-clone/repos';
 import { UsernameContext } from '@github-clone/context';
 import { UsernameForm } from './UsernameForm/UsernameForm';
+
+const ReposPage = lazy(() => import('@github-clone/repos'));
 
 function App() {
   const [username, setUsername] = useState<string>('');
@@ -35,15 +36,17 @@ function App() {
           <div>
             <UsernameForm onUsernameChange={onUsernameChange} />
 
-            <Switch>
-              <Route path="/repos">
-                <ReposPage />
-              </Route>
-              <Route path="/prs">PRs</Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route path="/repos">
+                  <ReposPage />
+                </Route>
+                <Route path="/prs">PRs</Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </Suspense>
           </div>
         </Router>
       </div>

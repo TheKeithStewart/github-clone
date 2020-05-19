@@ -1,1 +1,1 @@
-export { ReposPage } from './ReposPage';
+export { ReposPage as default } from './ReposPage';
