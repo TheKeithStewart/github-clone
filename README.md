@@ -1,5 +1,14 @@
 # GitHub Clone
 
+## Concerns to Address
+
+- Having a monolithic application that is not modularized
+- Hard to tell when something changes underneath
+- Clear separation of applications (e.g. main and admin applications)
+- Meaningful routes (e.g. /repositories, /pipelines, etc.)
+- Deep linking
+- Handle having multiple teams working in the same codebase
+
 ## Features
 
 - Mono-repo to support multiple apps and create a separation of concerns
@@ -24,9 +33,13 @@
 
 ## Structure
 
-```
+```ts
 root/
-    apps/               - Applications using create-react-app
-    packages/           -
-
+    apps/                 - Applications using create-react-app
+    libs/                 -
+      /pipeline
+      /progression
+      /project
+      /tasks
+      /shared
 ```
