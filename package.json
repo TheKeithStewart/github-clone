@@ -32,7 +32,7 @@
     "fork-ts-checker-webpack-plugin": "^4.1.4",
     "get-yarn-workspaces": "^1.0.2",
     "lerna": "^3.21.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prettier": "^2.0.5",
     "react-scripts": "3.4.1",
     "ts-jest": "^26.0.0",
